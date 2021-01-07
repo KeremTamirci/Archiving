@@ -16,7 +16,8 @@ while True:
     break
 
 
-def find_genre():
+def create_data():
+  """Verilen tablolara göre kullanıcı bilgileri oluşturur."""
   with open("makine.txt","w") as mak:
     mak.write("gender,age,genre\n")
     with open("By age.csv","r") as age:
@@ -50,7 +51,7 @@ def find_genre():
               mak.write(f"0,{age},{genre}\n")
 
 
-# find_genre()
+# create_data()
 movie_data = pandas.read_csv("makine.txt")
 y = movie_data["genre"]
 X = movie_data.drop(columns=["genre"])
