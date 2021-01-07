@@ -49,6 +49,7 @@ def find_genre():
               age = int(random.randint(limits[0],limits[1]))
               mak.write(f"0,{age},{genre}\n")
 
+
 # find_genre()
 movie_data = pandas.read_csv("makine.txt")
 y = movie_data["genre"]
