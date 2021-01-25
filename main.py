@@ -3,7 +3,7 @@ import random
 from sklearn.tree import DecisionTreeClassifier
 
 while True:
-  gender_input = input("Your gender?: ").strip()
+  gender_input = input("Your gender?: 'male' or 'female'").strip()
   if gender_input.lower() == "male":
     gender_type = 1
     break
@@ -12,8 +12,14 @@ while True:
     break
 while True:
   age_input = input("Your age?: ").strip()
-  if 18 <= int(age_input) <= 80:
-    break
+  try:
+    if 18 <= int(age_input) <= 80:
+      break
+    else:
+        print("Please enter an age between 18 and 80")
+  except:
+    print("Please enter an age between 18 and 80")
+    pass
 
 
 def create_data():
